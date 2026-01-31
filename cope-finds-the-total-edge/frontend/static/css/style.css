@@ -1,0 +1,604 @@
+/* Cope Finds the Total Edge - Dashboard Styles */
+
+:root {
+    --primary: #1a73e8;
+    --primary-dark: #1557b0;
+    --secondary: #5f6368;
+    --success: #34a853;
+    --warning: #fbbc04;
+    --danger: #ea4335;
+    --edge-color: #ff6b35;
+    --bg-dark: #1a1a2e;
+    --bg-card: #16213e;
+    --bg-card-hover: #1f3460;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border-color: #2a2a4a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    background: var(--secondary);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #4a4f52;
+}
+
+.btn-success {
+    background: var(--success);
+    color: white;
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+
+.btn-small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+/* Main Content */
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Stats Section */
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.stat-card.profit .stat-value {
+    color: var(--success);
+}
+
+.stat-card.profit .stat-value.negative {
+    color: var(--danger);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.tab {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.2s;
+}
+
+.tab:hover {
+    color: var(--text-primary);
+    background: var(--bg-card);
+}
+
+.tab.active {
+    color: var(--primary);
+    background: var(--bg-card);
+    border-bottom: 2px solid var(--primary);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Games List */
+.games-header, .bets-header, .injuries-header, .teams-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.last-updated {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.games-list {
+    display: grid;
+    gap: 1rem;
+}
+
+/* Game Card */
+.game-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s;
+}
+
+.game-card:hover {
+    background: var(--bg-card-hover);
+}
+
+.game-card.has-edge {
+    border-left: 4px solid var(--edge-color);
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.game-teams {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.game-time {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.edge-badge {
+    background: var(--edge-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.edge-badge.over {
+    background: var(--success);
+}
+
+.edge-badge.under {
+    background: var(--danger);
+}
+
+.game-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.detail-item {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+
+.detail-label {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    margin-bottom: 0.25rem;
+}
+
+.detail-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.detail-value.positive {
+    color: var(--success);
+}
+
+.detail-value.negative {
+    color: var(--danger);
+}
+
+/* Injuries in Game Card */
+.game-injuries {
+    background: rgba(234, 67, 53, 0.1);
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.game-injuries h4 {
+    font-size: 0.85rem;
+    color: var(--danger);
+    margin-bottom: 0.5rem;
+}
+
+.injury-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.injury-tag {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.injury-tag.star {
+    background: var(--warning);
+    color: black;
+}
+
+.game-actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+/* Bets List */
+.bets-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.bet-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.bet-info h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.bet-info .bet-details {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.bet-result {
+    text-align: center;
+}
+
+.result-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.result-badge.win {
+    background: var(--success);
+}
+
+.result-badge.loss {
+    background: var(--danger);
+}
+
+.result-badge.push {
+    background: var(--warning);
+    color: black;
+}
+
+.result-badge.pending {
+    background: var(--secondary);
+}
+
+.bet-profit {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.bet-profit.positive {
+    color: var(--success);
+}
+
+.bet-profit.negative {
+    color: var(--danger);
+}
+
+/* Injuries List */
+.injuries-list {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.injury-row {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    display: grid;
+    grid-template-columns: 200px 80px 1fr 100px;
+    gap: 1rem;
+    align-items: center;
+    border: 1px solid var(--border-color);
+}
+
+.injury-row.star-player {
+    border-left: 3px solid var(--warning);
+}
+
+.injury-player {
+    font-weight: 600;
+}
+
+.injury-team {
+    color: var(--text-secondary);
+}
+
+.injury-type {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.injury-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.injury-status.out {
+    background: var(--danger);
+}
+
+.injury-status.questionable {
+    background: var(--warning);
+    color: black;
+}
+
+.injury-status.probable {
+    background: var(--success);
+}
+
+/* Teams Table */
+.teams-list {
+    overflow-x: auto;
+}
+
+.teams-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.teams-table th,
+.teams-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.teams-table th {
+    background: rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.teams-table tr:hover {
+    background: var(--bg-card-hover);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-bottom: 1.5rem;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.close:hover {
+    color: var(--text-primary);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.form-display {
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* Loading */
+.loading {
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: center;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .game-details {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .bet-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .injury-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}

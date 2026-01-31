@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cope Finds the Total Edge | NBA Betting Calculator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🏀 Cope Finds the Total Edge</h1>
+            <p class="subtitle">NBA Totals Betting Calculator</p>
+        </div>
+        <div class="header-actions">
+            <button id="refresh-btn" class="btn btn-primary">
+                <span class="btn-icon">🔄</span> Refresh Data
+            </button>
+            <button id="alert-btn" class="btn btn-secondary">
+                <span class="btn-icon">📱</span> Send Alert
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Stats Summary -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-value" id="total-bets">0</div>
+                <div class="stat-label">Total Bets</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="win-rate">0%</div>
+                <div class="stat-label">Win Rate</div>
+            </div>
+            <div class="stat-card profit">
+                <div class="stat-value" id="total-profit">$0.00</div>
+                <div class="stat-label">Total Profit</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="roi">0%</div>
+                <div class="stat-label">ROI</div>
+            </div>
+        </section>
+
+        <!-- Navigation Tabs -->
+        <nav class="tabs">
+            <button class="tab active" data-tab="games">Today's Games</button>
+            <button class="tab" data-tab="bets">Bet History</button>
+            <button class="tab" data-tab="injuries">Injuries</button>
+            <button class="tab" data-tab="teams">Team Stats</button>
+        </nav>
+
+        <!-- Games Tab -->
+        <section id="games-tab" class="tab-content active">
+            <div class="games-header">
+                <h2>Today's NBA Games</h2>
+                <span class="last-updated" id="last-updated">Last updated: --</span>
+            </div>
+            <div id="games-list" class="games-list">
+                <div class="loading">Loading games...</div>
+            </div>
+        </section>
+
+        <!-- Bets Tab -->
+        <section id="bets-tab" class="tab-content">
+            <div class="bets-header">
+                <h2>Bet History</h2>
+            </div>
+            <div id="bets-list" class="bets-list">
+                <div class="loading">Loading bets...</div>
+            </div>
+        </section>
+
+        <!-- Injuries Tab -->
+        <section id="injuries-tab" class="tab-content">
+            <div class="injuries-header">
+                <h2>Injury Report</h2>
+            </div>
+            <div id="injuries-list" class="injuries-list">
+                <div class="loading">Loading injuries...</div>
+            </div>
+        </section>
+
+        <!-- Teams Tab -->
+        <section id="teams-tab" class="tab-content">
+            <div class="teams-header">
+                <h2>Team Statistics</h2>
+            </div>
+            <div id="teams-list" class="teams-list">
+                <div class="loading">Loading team stats...</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bet Modal -->
+    <div id="bet-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Place Bet</h2>
+            <form id="bet-form">
+                <input type="hidden" id="bet-game-id">
+                <input type="hidden" id="bet-game-date">
+                <input type="hidden" id="bet-home-team">
+                <input type="hidden" id="bet-away-team">
+                <input type="hidden" id="bet-projected">
+                <input type="hidden" id="bet-edge-value">
+
+                <div class="form-group">
+                    <label>Game</label>
+                    <div id="bet-game-display" class="form-display"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Bet Type</label>
+                    <select id="bet-type" required>
+                        <option value="OVER">OVER</option>
+                        <option value="UNDER">UNDER</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Line</label>
+                    <input type="number" id="bet-line" step="0.5" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Odds</label>
+                    <input type="number" id="bet-odds" value="-110" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Stake ($)</label>
+                    <input type="number" id="bet-stake" step="1" min="1" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Record Bet</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Settle Modal -->
+    <div id="settle-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Settle Bet</h2>
+            <form id="settle-form">
+                <input type="hidden" id="settle-bet-id">
+
+                <div class="form-group">
+                    <label>Actual Total Score</label>
+                    <input type="number" id="actual-total" step="1" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Settle Bet</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Cope Finds the Total Edge &copy; 2024 | Data from The Odds API & SportsDataIO</p>
+    </footer>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
