@@ -25,42 +25,135 @@ logger = logging.getLogger(__name__)
 
 # Team name mappings for Team Rankings site
 TEAM_RANKINGS_NAME_MAP = {
+    # Atlanta Hawks
     "Atlanta": "ATL",
+    "Atlanta Hawks": "ATL",
+    "Hawks": "ATL",
+    # Boston Celtics
     "Boston": "BOS",
+    "Boston Celtics": "BOS",
+    "Celtics": "BOS",
+    # Brooklyn Nets
     "Brooklyn": "BKN",
+    "Brooklyn Nets": "BKN",
+    "Nets": "BKN",
+    # Charlotte Hornets
     "Charlotte": "CHA",
+    "Charlotte Hornets": "CHA",
+    "Hornets": "CHA",
+    # Chicago Bulls
     "Chicago": "CHI",
+    "Chicago Bulls": "CHI",
+    "Bulls": "CHI",
+    # Cleveland Cavaliers
     "Cleveland": "CLE",
+    "Cleveland Cavaliers": "CLE",
+    "Cavaliers": "CLE",
+    "Cavs": "CLE",
+    # Dallas Mavericks
     "Dallas": "DAL",
+    "Dallas Mavericks": "DAL",
+    "Mavericks": "DAL",
+    "Mavs": "DAL",
+    # Denver Nuggets
     "Denver": "DEN",
+    "Denver Nuggets": "DEN",
+    "Nuggets": "DEN",
+    # Detroit Pistons
     "Detroit": "DET",
+    "Detroit Pistons": "DET",
+    "Pistons": "DET",
+    # Golden State Warriors
     "Golden State": "GSW",
     "Golden St": "GSW",
+    "Golden State Warriors": "GSW",
+    "Warriors": "GSW",
+    # Houston Rockets
     "Houston": "HOU",
+    "Houston Rockets": "HOU",
+    "Rockets": "HOU",
+    # Indiana Pacers
     "Indiana": "IND",
+    "Indiana Pacers": "IND",
+    "Pacers": "IND",
+    # Los Angeles Clippers
     "LA Clippers": "LAC",
     "L.A. Clippers": "LAC",
+    "Los Angeles Clippers": "LAC",
+    "Clippers": "LAC",
+    # Los Angeles Lakers
     "LA Lakers": "LAL",
     "L.A. Lakers": "LAL",
-    "Los Angeles Clippers": "LAC",
     "Los Angeles Lakers": "LAL",
+    "Lakers": "LAL",
+    # Memphis Grizzlies
     "Memphis": "MEM",
+    "Memphis Grizzlies": "MEM",
+    "Grizzlies": "MEM",
+    # Miami Heat
     "Miami": "MIA",
+    "Miami Heat": "MIA",
+    "Heat": "MIA",
+    # Milwaukee Bucks
     "Milwaukee": "MIL",
+    "Milwaukee Bucks": "MIL",
+    "Bucks": "MIL",
+    # Minnesota Timberwolves
     "Minnesota": "MIN",
+    "Minnesota Timberwolves": "MIN",
+    "Timberwolves": "MIN",
+    "Wolves": "MIN",
+    # New Orleans Pelicans
     "New Orleans": "NOP",
+    "New Orleans Pelicans": "NOP",
+    "Pelicans": "NOP",
+    # New York Knicks
     "New York": "NYK",
+    "New York Knicks": "NYK",
+    "Knicks": "NYK",
+    # Oklahoma City Thunder
     "Oklahoma City": "OKC",
     "Okla City": "OKC",
+    "Oklahoma City Thunder": "OKC",
+    "Thunder": "OKC",
+    # Orlando Magic
     "Orlando": "ORL",
+    "Orlando Magic": "ORL",
+    "Magic": "ORL",
+    # Philadelphia 76ers
     "Philadelphia": "PHI",
+    "Philadelphia 76ers": "PHI",
+    "76ers": "PHI",
+    "Sixers": "PHI",
+    # Phoenix Suns
     "Phoenix": "PHX",
+    "Phoenix Suns": "PHX",
+    "Suns": "PHX",
+    # Portland Trail Blazers
     "Portland": "POR",
+    "Portland Trail Blazers": "POR",
+    "Trail Blazers": "POR",
+    "Blazers": "POR",
+    # Sacramento Kings
     "Sacramento": "SAC",
+    "Sacramento Kings": "SAC",
+    "Kings": "SAC",
+    # San Antonio Spurs
     "San Antonio": "SAS",
+    "San Antonio Spurs": "SAS",
+    "Spurs": "SAS",
+    # Toronto Raptors
     "Toronto": "TOR",
+    "Toronto Raptors": "TOR",
+    "Raptors": "TOR",
+    # Utah Jazz
     "Utah": "UTA",
+    "Utah Jazz": "UTA",
+    "Jazz": "UTA",
+    # Washington Wizards
     "Washington": "WAS",
+    "Washington Wizards": "WAS",
+    "Wizards": "WAS",
 }
 
 
