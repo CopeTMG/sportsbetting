@@ -223,14 +223,17 @@ class TeamRankingsScraper:
 
             for row in rows:
                 cells = row.find_all("td")
-                if len(cells) >= 2:
-                    # Team name is usually in first cell
-                    team_cell = cells[0]
+                if len(cells) >= 3:
+                    # Team Rankings table structure:
+                    # Column 0: Rank (1, 2, 3...)
+                    # Column 1: Team name (with link)
+                    # Column 2: Current season stat value
+                    team_cell = cells[1]  # Team name is in second column
                     team_link = team_cell.find("a")
-                    team_name = team_link.text if team_link else team_cell.text
+                    team_name = team_link.text.strip() if team_link else team_cell.text.strip()
 
-                    # Stat value is usually in second cell (current season)
-                    stat_value = cells[1].text.strip()
+                    # Stat value is in third cell (current season)
+                    stat_value = cells[2].text.strip()
 
                     team_abbrev = self._parse_team_name(team_name)
                     if team_abbrev:
